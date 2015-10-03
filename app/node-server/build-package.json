@@ -1,0 +1,14 @@
+{
+  "name": "node-example",
+  "version": "1.0.0",
+  "description": "this is a package.json that specifically exists just to pass through to the final build for the purposes of deploying it as a node heroku app. The gruntfile renames it to package.json as part of the build process.",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-static": "^0.7.7"
+  },
+  "engines": {
+    "node": "0.12.x"
+  }
+}

@@ -1,0 +1,44 @@
+$standard-transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+@mixin font-stack($filename) {
+  src: url('/fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/#{$filename}.woff') format('woff'), 
+  url('/fonts/#{$filename}.ttf')  format('truetype'),
+  url('/fonts/#{$filename}.svg##{$filename}') format('svg');
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $spread, $color) {
+	-webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+	-moz-box-shadow: $horizontal $vertical $blur $spread $color;
+	box-shadow: $horizontal $vertical $blur $spread $color;
+}
+
+@mixin over-image-text-background {
+  background: linear-gradient( 0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4) 76%, transparent);
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+   @content;
+ }
+
+  &:-moz-placeholder { 
+   @content;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    @content; 
+  }
+
+  &:-ms-input-placeholder {  
+   @content; 
+  }
+}

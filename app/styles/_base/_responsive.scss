@@ -1,0 +1,53 @@
+// =============================================
+// Breakpoints
+// =============================================
+
+$breakpoint-extra-small: 420px;
+$breakpoint-small: 768px;
+$breakpoint-large: 992px;
+
+@mixin breakpoint($feature, $value) {
+    @media only screen and ($feature: $value) {
+        @content;
+    }
+}
+
+
+// =============================================
+// Easier Responsive Mixins
+// =============================================
+
+
+@mixin breakpoint-extra-small() {
+  //specific overrides for tiny screens
+  @include breakpoint(max-width, $breakpoint-extra-small) {
+    @content
+  }
+}
+
+@mixin breakpoint-small() {
+  //0px –– 767px
+  @include breakpoint(max-width, $breakpoint-small) {
+    @content
+  }
+}
+
+@mixin breakpoint-medium() {
+  //768px –– 991px
+  @media only screen and (min-width:$breakpoint-small) and (max-width: $breakpoint-large) {
+    @content
+  }
+}
+
+@mixin breakpoint-large() {
+  //992px –– ∞
+  @include breakpoint(min-width, $breakpoint-large) {
+    @content
+  }
+}
+
+@mixin breakpoint-medium-or-larger() {
+  @include breakpoint(min-width, $breakpoint-small) {
+    @content
+  }
+}

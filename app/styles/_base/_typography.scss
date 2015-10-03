@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+// @font-face {
+//   font-family: 'Font Family';
+//   @include font-stack(font-path);
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+$sans-fallback: Helvetica, Arial, sans-serif;
+
+$sans-font: 'Open Sans', $sans-fallback;
+$headline-font: '', $sans-fallback;
+$headline-font-light: '', $sans-fallback;

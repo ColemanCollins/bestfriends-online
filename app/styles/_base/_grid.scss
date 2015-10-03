@@ -1,0 +1,51 @@
+$grid-gutter: 16px;
+$page-edge-padding: 0; //optional additional padding on the edge of the viewport
+$page-edge-padding-breakpoint-small: 5px;
+$container-max-width-large: 1000px;
+$container-max-width-medium: 780px;
+
+@mixin grid-container() {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: $page-edge-padding + $grid-gutter/2;
+  padding-right: $page-edge-padding + $grid-gutter/2;
+  // transition: all $standard-transition;
+  @include breakpoint-small {
+    padding-left: $page-edge-padding-breakpoint-small + $grid-gutter/2;
+    padding-right: $page-edge-padding-breakpoint-small + $grid-gutter/2;
+  }
+  @include breakpoint-medium {
+    max-width: $container-max-width-medium;
+  }  
+  @include breakpoint-large {
+    max-width: $container-max-width-large;
+  }
+}
+
+@mixin grid-row() {
+  display: block;
+  margin-left: -($grid-gutter/2);
+  margin-right: -($grid-gutter/2);
+  //negative margins allow the gutter to line up to the row, like bootstrap 3's grid
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  @include clearfix;
+}
+
+// number of columns, total number of columns, optional offset
+@mixin grid-columns($number-of-columns, $total-number-of-columns, $columns-offset: 0) {
+  width: 100% * ($number-of-columns/$total-number-of-columns);
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: $grid-gutter/2; 
+  padding-right: $grid-gutter/2;
+  margin-left: $columns-offset * (100%/$total-number-of-columns);
+  transition: all $standard-transition;
+}
