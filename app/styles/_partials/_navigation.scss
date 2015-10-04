@@ -41,17 +41,17 @@
       &.-samanda {
         padding-left: 0;
         &:hover {
-        color: #EAA8CC;
+        color: $samanda-pink;
         }
       }
       &.-rowen:hover {
-        color: #DC6926;
+        color: $rowen-orange;
       }
       &.-gus:hover {
-        color: #395EA4;
+        color: $gus-blue;
       }
       &.-jaxon:hover {
-        color: #38B464;
+        color: $jaxon-green;
       }
       &.-about:hover {
         span { transition: color $standard-transition; }
@@ -77,7 +77,7 @@
         > a {
           display: inline-block;
           color: #fff;
-          background: #38B464;
+          background: $jaxon-green;
           height: 44px;
           line-height: 44px;
           border-radius: 44px;
@@ -95,7 +95,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 0;
+    z-index: 911;
     .nav-links {
       background: rgba(0,0,0,0.9);
       max-height: 0px;
@@ -104,7 +104,7 @@
       &.-expanded {
         transform: scale3d(1, 1, 1);
         max-height: 911px;
-        padding-top: 20px;
+        padding-top: 20px; 
       }
     }
 
@@ -195,7 +195,7 @@
         > a {
           display: inline-block;
           color: #fff;
-          background: #38B464;
+          background: $jaxon-green;
           height: 44px;
           line-height: 44px;
           border-radius: 44px;

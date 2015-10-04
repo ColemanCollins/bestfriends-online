@@ -11,3 +11,43 @@ $base-font-size: 16px;
 
 $h1-size: 48px;
 $h1-line-height: $vertical-spacer * 10;
+
+@mixin headline {
+  font-weight: 800;
+  @include breakpoint-xl {
+    font-size: 60px;
+    line-height: 70px;
+  }
+  @include breakpoint-large {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  @include breakpoint-medium {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  @include breakpoint-small {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+@mixin body-copy {
+  font-weight: 300;
+  @include breakpoint-xl {
+    font-size: 24px;
+    line-height: 35px;
+  }
+  @include breakpoint-large {
+    font-size: 21px;
+    line-height: 30px;
+  }
+  @include breakpoint-medium {
+    font-size: 21px;
+    line-height: 30px;
+  }
+  @include breakpoint-small {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}

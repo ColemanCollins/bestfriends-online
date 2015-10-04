@@ -23,7 +23,7 @@ $hero-height-small: 300px;
 
 
 #hero {
-  background: url(/images/hero-background.jpg) no-repeat center center fixed; 
+  background: url(../images/hero-background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -76,32 +76,6 @@ $hero-height-small: 300px;
   .fullbleed-container {
     @include grid-row;
   }
-  .hero-cta {
-    @include breakpoint-xl {
-      @include grid-columns(6,12,6);
-    }
-    @include breakpoint-large {
-      @include grid-columns(8,12,4);
-    }
-    @include breakpoint-medium {
-      @include grid-columns(6,8,2);
-    }
-    @include breakpoint-small {
-      @include grid-columns(4,4);
-    }
-    padding-top: $vertical-spacer * 10;
-  }
-  .hero-headline {
-    font-family: $headline-font;
-    font-size: $h1-size;
-    line-height: $h1-line-height;
-    color: $brand-dark-blue;
-    padding-top: $vertical-spacer * 3;
-    padding-bottom: $vertical-spacer * 3;
-  }
-  .hero-action-button {
-    @include button(#01E858, #000, lighten(#01E858, 10%), #000);
-  }
 }
 
 #intro-section {
@@ -118,48 +92,26 @@ $hero-height-small: 300px;
   .intro-section-content {
     @include grid-container;    
   }
-  .general-intro {
-    @include grid-row;
-    margin-bottom: $vertical-spacer * 10;
-  }
-  .intro-headline {
-    @include grid-columns(12,12);
-    padding-top: $vertical-spacer * 6;
-    padding-bottom: $vertical-spacer * 4;
-    font-weight: 800;
-    font-size: 36px;
-    line-height: 40px;
-  }
-  .intro-sales-copy {
-    @include breakpoint-large-or-larger {
-      @include grid-columns(6,12);
-    }
-    @include breakpoint-medium-or-smaller {
-      @include grid-columns(6,6);
-    }
-    font-size: 21px;
-    line-height: 30px;
-    margin-bottom: 10px;
-    font-weight: 300;
-  }
-
 
   .friends-intro {
     @include grid-row;
-    margin-bottom: $vertical-spacer * 10;
   }
   .best-friend {
+    @include grid-columns(3,12);
     @include breakpoint-large-or-larger {
-      @include grid-columns(3,12);
+      margin: 80px 0 40px 0;
     }
-    @include breakpoint-medium-or-smaller {
-      @include grid-columns(3,6);
+    @include breakpoint-medium {
+      margin: 50px 0 15px 0;
+    }
+    @include breakpoint-small {
+      margin: 40px 0 10px 0;
     }
   }
-  $best-friend-section-width-xl: 190px;
+  $best-friend-section-width-xl: 180px;
   $best-friend-section-width-large: 150px;
-  $best-friend-section-width-medium: 180px;
-  $best-friend-section-width-small: 130px;
+  $best-friend-section-width-medium: 90px;
+  $best-friend-section-width-small: 69px;
   .best-friend-image {
     @include breakpoint-xl {
       width: $best-friend-section-width-xl;
@@ -168,7 +120,7 @@ $hero-height-small: 300px;
     @include breakpoint-large {
       width: $best-friend-section-width-large;
       height: $best-friend-section-width-large;
-    }
+    } 
     @include breakpoint-medium {
       width: $best-friend-section-width-medium;
       height: $best-friend-section-width-medium;
@@ -180,72 +132,207 @@ $hero-height-small: 300px;
     overflow: hidden;
     border-radius: 50%;
     margin: 0 auto;
-    border: 3px solid #ccc;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
-  .best-friend-name {
+
+  .general-intro {
+    @include grid-row;
+    margin-bottom: $vertical-spacer * 10;
+  }
+  .intro-headline {
+    @include grid-columns(12,12);
+    padding-top: $vertical-spacer * 6;
+    padding-bottom: $vertical-spacer * 4;
+    color: $jaxon-green;
+    @include headline;
+  }
+  .intro-sales-copy {
+    @include body-copy;
+    margin-bottom: 10px;
     @include breakpoint-xl {
-      width: $best-friend-section-width-xl;
+      @include grid-columns(6,12);
     }
     @include breakpoint-large {
-      width: $best-friend-section-width-large;
+      @include grid-columns(6,12);
     }
     @include breakpoint-medium {
-      width: $best-friend-section-width-medium;
+      @include grid-columns(6,6);
     }
     @include breakpoint-small {
-      width: $best-friend-section-width-small;
+      @include grid-columns(6,6);
     }
-    margin: 0 auto;
-    padding: $vertical-spacer * 4 0 $vertical-spacer * 2 0;
-    font-size: 21px;
-    font-weight: 600;
   }
-  .best-friend-blurb {
-    @include breakpoint-xl {
-      width: $best-friend-section-width-xl;
-    }
-    @include breakpoint-large {
-      width: $best-friend-section-width-large;
-    }
-    @include breakpoint-medium {
-      width: $best-friend-section-width-medium;
-    }
-    @include breakpoint-small {
-      width: $best-friend-section-width-small;
-    }
-    margin: 0 auto;
-    font-size: 18px;
-    line-height: 20px;
-    min-height: 80px;
-  }
-  .best-friend-button {
-    @include button(#01E858, #000, lighten(#01E858, 10%), #000);
-    @include breakpoint-xl {
-      width: $best-friend-section-width-xl;
-    }
-    @include breakpoint-large {
-      width: $best-friend-section-width-large;
-    }
-    @include breakpoint-medium {
-      width: $best-friend-section-width-medium;
-    }
-    @include breakpoint-small {
-      width: $best-friend-section-width-small;
-    }
-    display: block;
-    margin: $vertical-spacer * 2 auto; 
+
+  .features-intro {
+    height: 420px;
   }
 }
 
+#meet-samanda, #meet-rowen, #meet-gus, #meet-jaxon { 
+  background: #fff;
+}
+
 .meet-friend-divider {
-  background: #666;
-  height: 500px;
+  @include breakpoint-xl {
+    height: 240px;
+  }
+  @include breakpoint-large {
+    height: 180px;
+    margin-bottom: 10px;
+  }
+  @include breakpoint-medium-or-smaller {
+    height: 134px;
+    margin-bottom: 60px;
+  }
+  #meet-samanda & {
+    background: $samanda-purple;
+  }
+  #meet-rowen & {
+    background: $rowen-orange;
+  }
+  #meet-gus & {
+    background: $gus-blue;
+  }
+  #meet-jaxon & {
+    background: $jaxon-green;
+  }
+
   .meet-friend-divider-content {
     @include grid-container;
-    line-height: $vertical-spacer * 12;
-    text-align: center;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 21px;
+  }
+  .meet-friend-image {
+    width: 169px;
+    height: 169px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    @include breakpoint-xl {
+      margin-left: 5%;
+      top: 240px - 169px/2;
+    }
+    @include breakpoint-large {
+      top: 180px - 169px/2;
+    }
+    @include breakpoint-medium-or-smaller {
+      margin: 0 auto;
+      top: 134px - 169px/2;
+    }
+    > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.meet-friend {
+  @include grid-container;
+  .meet-friend-content {
+    @include grid-row;
+    padding-bottom: 50px;
+  }
+  .meet-friend-copy {
+    @include breakpoint-large-or-larger {
+      @include grid-columns(9,12,3)
+    }
+    @include breakpoint-medium-or-smaller {
+      @include grid-columns(12,12);
+    }
+  }
+  .meet-friend-headline {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    @include headline;
+    @include breakpoint-large-or-larger {
+      margin-bottom: 20px;
+    }
+    @include breakpoint-medium-or-smaller {
+      margin-bottom: 10px;
+    }
+    .hanging-quote {
+      @include breakpoint-large-or-larger {
+      display: inline-block;
+      margin-left: -30px;
+      }
+    }
+    #meet-samanda & {
+      color: $samanda-purple;
+    }
+    #meet-rowen & {
+      color: $rowen-orange;
+    }
+    #meet-gus & {
+      color: $gus-blue;
+    }
+    #meet-jaxon & {
+      color: $jaxon-green;
+    }
+  }
+  .meet-friend-details {
+    @include body-copy;
+  }
+  .meet-friend-button {
+    @include breakpoint-large-or-larger {
+      @include grid-columns(9,12,3);
+      padding: 30px 0;
+    }
+    @include breakpoint-medium-or-smaller {
+      @include grid-columns(12,12);
+      padding: 20px 0;
+    }
+    a {
+      display: block;
+      color: #fff;
+      font-size: 24px;
+      height: 70px;
+      line-height: 70px;
+      border-radius: 70px;
+      padding: 0 22px;
+      box-shadow: 0 0 0 rgba(255,255,255,0);
+      width: 377px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 800;
+      #meet-samanda & {
+        background: $samanda-purple;
+      }
+      #meet-rowen & {
+        background: $rowen-orange;
+      }
+      #meet-gus & {
+        background: $gus-blue;
+      }
+      #meet-jaxon & {
+        background: $jaxon-green;
+      }
+      @include breakpoint-small {
+        width: 100%;
+        font-size: 21px;
+      }
+      &:hover {
+        box-shadow: inset 0px 0px 0px 44px rgba(255,255,255,0.1);
+      }
+    }
+  }
+  .meet-friend-demos {
+    clear: both;
+    .meet-friend-demo-image {
+      @include breakpoint-large-or-larger {
+        @include grid-columns(4,12);
+        padding: 3%;
+      }
+      @include breakpoint-medium {
+        @include grid-columns(4,12);
+      }
+      @include breakpoint-small {
+        @include grid-columns(4,4);
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      height: auto;
+    }
   }
 }
