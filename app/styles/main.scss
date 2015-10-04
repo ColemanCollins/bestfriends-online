@@ -47,13 +47,14 @@ $hero-height-small: 300px;
   .hero-logo {
     // transition: height $standard-transition, width $standard-transition, padding $standard-transition;
     margin: 0 auto;
+    opacity: 0.9;
     width: $hero-height-large;
     height: $hero-height-large;
     text-align: center;
     @include breakpoint-large-or-larger {
       width: $hero-height-large;
       height: $hero-height-large;
-      padding: ($hero-height-large - 515px)/2 0;
+      padding: ($hero-height-large - 500px)/2 0;
     }
     @include breakpoint-medium {
       width: $hero-height-medium;
@@ -167,13 +168,89 @@ $hero-height-small: 300px;
     }
   }
 
+  .testimonials {
+    @include grid-row;
+    @include breakpoint-large-or-larger {
+      margin: 50px 0;
+    }
+    @include breakpoint-medium-or-smaller {
+      margin: 20px 0;
+    }
+    .testimonial {
+      @include breakpoint-xl {
+        @include grid-columns(10,12,1);
+      }
+      @include breakpoint-large {
+        @include grid-columns(10,12,1);
+      }
+      @include breakpoint-medium {
+        @include grid-columns(6,6);
+      }
+      @include breakpoint-small {
+        @include grid-columns(6,6);
+      }
+    }
+    .testimonial-copy {
+      @include headline;
+      color: #666;
+      text-align: center;
+      font-weight: 300;
+      font-style: italic;
+    }
+    .testimonial-name {
+      @include body-copy;
+      text-align: right;
+      margin-right: 20%;
+      > a {
+        color: #666;
+      }
+      > a:hover {
+        color: $jaxon-green;
+      }
+    }
+  }
+
   .features-intro {
-    height: 420px;
+    @include grid-row;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .featured-block {
+      @include breakpoint-xl {
+        @include grid-columns(2,12);
+      }
+      @include breakpoint-large {
+        @include grid-columns(2,12);
+      }
+      @include breakpoint-medium {
+        @include grid-columns(2,6);
+        height: 60px;
+      }
+      @include breakpoint-small {
+        @include grid-columns(2,6);
+        height: 60px;
+      }
+      p {
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 10px;
+      }
+      > img, > p {
+        opacity: 0.5;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+      > img:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
   }
 }
 
 #meet-samanda, #meet-rowen, #meet-gus, #meet-jaxon { 
-  background: #fff;
+  background: #efefef;
 }
 
 .meet-friend-divider {
@@ -273,6 +350,7 @@ $hero-height-small: 300px;
   }
   .meet-friend-details {
     @include body-copy;
+    margin-bottom: 10px;
   }
   .meet-friend-button {
     @include breakpoint-large-or-larger {
@@ -306,7 +384,11 @@ $hero-height-small: 300px;
         background: $gus-blue;
       }
       #meet-jaxon & {
-        background: $jaxon-green;
+        background: #ccc;
+        &:hover {
+          box-shadow: inset 0px 0px 0px 44px transparent;
+          cursor: auto;
+        }
       }
       @include breakpoint-small {
         width: 100%;
@@ -326,6 +408,7 @@ $hero-height-small: 300px;
       }
       @include breakpoint-medium {
         @include grid-columns(4,12);
+        margin-top: 20px;
       }
       @include breakpoint-small {
         @include grid-columns(4,4);
@@ -333,6 +416,119 @@ $hero-height-small: 300px;
         margin-bottom: 15px;
       }
       height: auto;
+    }
+  }
+}
+
+#meet-the-team {
+  background: #444;
+  padding: 20px 0;
+  @include clearfix;
+  .meet-the-team-content {
+    @include grid-container;
+  }
+  .the-team {
+    @include grid-row;
+  }
+  .meet-the-team-headline {
+    @include grid-columns(12,12);
+    padding-top: $vertical-spacer * 6;
+    padding-bottom: $vertical-spacer * 4;
+    color: #fff;
+    @include headline;
+  }
+  .meet-the-team-copy {
+    color: #fff;
+    @include body-copy;
+    margin-bottom: 10px;
+    @include breakpoint-xl {
+      @include grid-columns(6,12);
+      min-height: 255px;
+    }
+    @include breakpoint-large {
+      @include grid-columns(6,12);
+      min-height: 255px;
+    }
+    @include breakpoint-medium {
+      @include grid-columns(6,6);
+    }
+    @include breakpoint-small {
+      @include grid-columns(6,6);
+    }
+  }
+  .team-inner-copy {
+    margin-bottom: 10px;
+  }
+  .meet-the-team-images {
+    @include grid-row;
+  }
+  .team-person {
+    @include breakpoint-xl {
+      @include grid-columns(2,12);
+    }
+    @include breakpoint-large {
+      @include grid-columns(2,12);
+    }
+    @include breakpoint-medium {
+      @include grid-columns(2,6);
+    }
+    @include breakpoint-small {
+      @include grid-columns(2,4);
+    }
+    transition: color $standard-transition;
+    &:hover .team-person-name {
+      color: $jaxon-green;
+    }
+  }
+  .team-person-photo {
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    @include breakpoint-xl {
+      width: 100px;
+    }
+    @include breakpoint-large {
+      width: 100px;
+    }
+    @include breakpoint-medium {
+      width: 100px;
+    }
+    @include breakpoint-small {
+      width: 100px;
+    }
+    > img { width: 100%; height: auto }
+  }
+  .team-person-name {
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    @include breakpoint-xl {
+      width: 100px;
+    }
+    @include breakpoint-large {
+      width: 100px;
+    }
+    @include breakpoint-medium {
+      width: 100px;
+    }
+    @include breakpoint-small {
+      width: 100px;
+    }
+  }
+}
+
+footer {
+  padding: 60px 0 30px 0;
+  text-align: center;
+  background: #444;
+  color: #fff;
+  a {
+    color: $jaxon-green;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

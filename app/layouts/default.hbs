@@ -32,6 +32,24 @@
       $(this).toggleClass('-close');
       $('.nav-links').toggleClass('-expanded');
     });
+
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 400, function() {
+              window.location.hash = target.selector;
+            });
+            return false;
+          }
+        }
+      });
+    });
+
   </script>
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

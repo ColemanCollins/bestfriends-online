@@ -11,7 +11,7 @@
       z-index: 2;
       background: #333;
       top: 0;
-      transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);;
+      transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
     &.-stuck-to-hero {
       height: 69px;
@@ -19,6 +19,9 @@
       background: transparent;
       top: -55px; 
       margin-top: 55px;
+      .small-logo {
+        display: none;
+      }
     }
     .nav-wrapper {
       @include grid-container;
@@ -28,6 +31,15 @@
     }
     .open-button, .close-button {
       display: none;
+    }
+    .small-logo {
+      display: inline-block;
+      width: auto;
+      padding: 10px 0;
+      > img {
+        height: 44px;
+        width: auto;
+      }
     }
     .nav-link {
       display: inline-block;
@@ -107,6 +119,9 @@
         padding-top: 20px; 
       }
     }
+    .small-logo {
+      display: none;
+    }
 
     .mobile-menu-toggle {
       $button-size : 44px; 
@@ -154,7 +169,6 @@
         &:before { top: $button-size/4; }
         &:after { top: -$button-size/4; }
       }
-
       &.-close {
         right: 3  px;
         transform: scale3d(0.8, 0.8, 0.8);

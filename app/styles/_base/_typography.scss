@@ -15,7 +15,7 @@ $h1-line-height: $vertical-spacer * 10;
 @mixin headline {
   font-weight: 800;
   @include breakpoint-xl {
-    font-size: 60px;
+    font-size: 58px;
     line-height: 70px;
   }
   @include breakpoint-large {
