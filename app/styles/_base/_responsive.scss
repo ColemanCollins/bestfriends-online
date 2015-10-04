@@ -2,9 +2,9 @@
 // Breakpoints
 // =============================================
 
-$breakpoint-extra-small: 420px;
-$breakpoint-small: 768px;
-$breakpoint-large: 992px;
+$breakpoint-small: 420px;
+$breakpoint-medium: 690px;
+$breakpoint-large: 911px;
 
 @mixin breakpoint($feature, $value) {
     @media only screen and ($feature: $value) {
@@ -18,36 +18,49 @@ $breakpoint-large: 992px;
 // =============================================
 
 
-@mixin breakpoint-extra-small() {
-  //specific overrides for tiny screens
-  @include breakpoint(max-width, $breakpoint-extra-small) {
-    @content
-  }
-}
-
 @mixin breakpoint-small() {
-  //0px –– 767px
+  //420px –– 0px
   @include breakpoint(max-width, $breakpoint-small) {
     @content
   }
 }
 
 @mixin breakpoint-medium() {
-  //768px –– 991px
-  @media only screen and (min-width:$breakpoint-small) and (max-width: $breakpoint-large) {
+  //420px –– 690
+  @media only screen and (min-width:$breakpoint-small) and (max-width: $breakpoint-medium) {
     @content
   }
 }
 
 @mixin breakpoint-large() {
-  //992px –– ∞
+  //666px –– 911px
+  @media only screen and (min-width:$breakpoint-medium) and (max-width: $breakpoint-large) {
+    @content
+  }
+}
+
+@mixin breakpoint-xl() {
+  //911 –– infinity
   @include breakpoint(min-width, $breakpoint-large) {
+    @content
+  }
+}
+
+@mixin breakpoint-medium-or-smaller() {
+  @include breakpoint(max-width, $breakpoint-medium) {
     @content
   }
 }
 
 @mixin breakpoint-medium-or-larger() {
   @include breakpoint(min-width, $breakpoint-small) {
+    @content
+  }
+}
+
+
+@mixin breakpoint-large-or-larger() {
+  @include breakpoint(min-width, $breakpoint-medium) {
     @content
   }
 }

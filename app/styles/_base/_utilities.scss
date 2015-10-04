@@ -1,4 +1,4 @@
-$standard-transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+$standard-transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
 @mixin font-stack($filename) {
   src: url('/fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),

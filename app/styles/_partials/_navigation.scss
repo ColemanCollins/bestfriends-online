@@ -1,0 +1,209 @@
+#main-navigation {
+  @include breakpoint-large-or-larger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    top: -69px; 
+    padding-top: 5px;
+    &.-stuck-to-top {
+      height: 77px;
+      z-index: 2;
+      background: #333;
+      top: 0;
+      transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);;
+    }
+    &.-stuck-to-hero {
+      height: 69px;
+      z-index: -1;
+      background: transparent;
+      top: -55px; 
+      margin-top: 55px;
+    }
+    .nav-wrapper {
+      @include grid-container;
+    }
+    .nav-links {
+      float: right;
+    }
+    .open-button, .close-button {
+      display: none;
+    }
+    .nav-link {
+      display: inline-block;
+      padding: 25px 15px;
+      font-family: $sans-font;
+      font-weight: 800;
+      color: #FFF;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      transition: color $standard-transition;
+      &.-samanda {
+        padding-left: 0;
+        &:hover {
+        color: #EAA8CC;
+        }
+      }
+      &.-rowen:hover {
+        color: #DC6926;
+      }
+      &.-gus:hover {
+        color: #395EA4;
+      }
+      &.-jaxon:hover {
+        color: #38B464;
+      }
+      &.-about:hover {
+        span { transition: color $standard-transition; }
+        span:first-child {
+          color: lighten(red, 25%);
+        }
+        span:nth-child(2) {
+          color: lighten(orange, 15%);
+        }
+        span:nth-child(3) {
+          color: yellow;
+        }
+        span:nth-child(4) {
+          color: lightblue;
+        }
+        span:last-child {
+          color: lighten(purple, 45%);
+        }
+      }
+      &.-make-friends {
+        padding: 0;
+        margin-left: 10px;
+        > a {
+          display: inline-block;
+          color: #fff;
+          background: #38B464;
+          height: 44px;
+          line-height: 44px;
+          border-radius: 44px;
+          padding: 0 22px;
+          box-shadow: 0 0 0 rgba(255,255,255,0) ;
+          &:hover {
+            box-shadow: inset 0px 0px 0px 44px rgba(255,255,255,0.1);
+          }
+        }
+      }
+    }
+  } // end desktop nav
+  @include breakpoint-medium-or-smaller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    .nav-links {
+      background: rgba(0,0,0,0.9);
+      max-height: 0px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+      &.-expanded {
+        transform: scale3d(1, 1, 1);
+        max-height: 911px;
+        padding-top: 20px;
+      }
+    }
+
+    .mobile-menu-toggle {
+      $button-size : 44px; 
+      $transition: .3s; // increase this to see the transformations in slow-motion
+      display: inline-block;
+      padding: $button-size/2 $button-size/4;
+      transition: $transition;
+      cursor: pointer;
+      user-select: none;
+      border-radius: $button-size/7;
+      background: transparent;
+      position: fixed;
+      right: 5px;
+      top: 0;
+      z-index: 3;
+      &:hover {
+        opacity: 1;
+      }
+      
+      &:active {
+        transition: 0;
+      }
+      .lines {
+        //create middle line
+        display: inline-block;
+        width: $button-size;
+        height: $button-size/7;
+        background: #fff;
+        border-radius: $button-size/14; 
+        position: relative; 
+        transition: background .3s .6s ease;
+        //create the upper and lower lines as pseudo-elements of the middle line
+        &:before, &:after {
+          display: inline-block;
+          width: $button-size;
+          height: $button-size/7;
+          background: #fff;
+          border-radius: $button-size/14; 
+          position: absolute;
+          left:0;
+          content: '';
+          transform-origin: 50% 50%;
+          transition: top .3s .6s ease, transform .3s ease;
+        }
+        &:before { top: $button-size/4; }
+        &:after { top: -$button-size/4; }
+      }
+
+      &.-close {
+        right: 3  px;
+        transform: scale3d(0.8, 0.8, 0.8);
+        .lines {
+          transition: background .3s 0s ease;
+          background: transparent;
+
+          &:before, &:after{
+            transition: top .3s ease, transform .3s .5s ease;      
+            top:0;
+            width: $button-size;
+          }
+          &:before{
+            transform: rotate3d(0,0,1,45deg); 
+          }
+          &:after{
+            transform: rotate3d(0,0,1,-45deg); 
+          }
+        }
+      }
+    }
+
+
+
+    .nav-link {
+      display: block;
+      width: 200px;
+      margin: 0 auto;
+      padding: 25px 15px;
+      font-family: $sans-font;
+      font-weight: 800;
+      color: #FFF;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      text-align: center;
+      &.-make-friends {
+        padding-bottom: 35px;
+        > a {
+          display: inline-block;
+          color: #fff;
+          background: #38B464;
+          height: 44px;
+          line-height: 44px;
+          border-radius: 44px;
+          padding: 0 22px;
+          box-shadow: 0 0 0 rgba(255,255,255,0);
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+}

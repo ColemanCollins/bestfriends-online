@@ -5,9 +5,9 @@
 </head>
 <body role="document">
 
+    {{> navigation}}
     {{> body }}
-
-  <footer></footer>
+    {{> footer }}
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
@@ -15,29 +15,9 @@
   <!-- endbower -->
   <!-- endbuild -->
 
-  <!-- build:js scripts/_vendor/bootstrap.min.js -->
-  <script src="scripts/_vendor/bootstrap.min.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js scripts/_vendor/jquery.flot.min.js -->
-  <script src="scripts/_vendor/jquery.flot.min.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js scripts/_vendor/flot.curvedLines.js -->
-  <script src="scripts/_vendor/flot.curvedLines.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js scripts/_main/account-summary.js -->
-  <script src="scripts/_main/account-summary.js"></script>
-  <!-- endbuild -->
-
   <!-- build:js scripts/_main/payments.js -->
-  <script src="scripts/_main/payments.js"></script>
+  <script src="scripts/_main/main.js"></script>
   <!-- endbuild -->
-  
-  <!--build:js scripts/_main/profile.js-->
-  <script src="scripts/_main/profile.js"></script>
-  <!--endbuild-->
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>

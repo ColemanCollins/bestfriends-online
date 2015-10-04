@@ -1,0 +1,37 @@
+@mixin button($background-color, $text-color, $hover-background-color, $hover-text-color) {
+  font-family: $sans-font;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: ($vertical-spacer*2) + 1px; 
+  padding-right: $vertical-spacer*4 ;
+  padding-bottom: ($vertical-spacer*2) - 1px; 
+  padding-left: $vertical-spacer*4;
+  background: $background-color;
+  min-width: 136px;
+  color: $text-color;
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid $background-color;
+  border-spacing: 0;
+  cursor: pointer;
+  box-shadow: 0 0 0 $hover-background-color;
+  &:hover, &:focus {
+    color: $hover-text-color;
+    box-shadow: inset 0px 0px 0px 44px rgba(0,0,0,0.75);
+    transition: box-shadow 120ms ease-in-out;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  &:disabled, &.-disabled {
+    pointer-events: none;
+    background: lighten($hover-background-color, 10%);
+    border-color: lighten($hover-background-color, 3%);
+    color: lighten($hover-text-color, 30%);
+  }
+}

@@ -1,14 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-
-// @font-face {
-//   font-family: 'Font Family';
-//   @include font-stack(font-path);
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,800);
 
 $sans-fallback: Helvetica, Arial, sans-serif;
 
 $sans-font: 'Open Sans', $sans-fallback;
-$headline-font: '', $sans-fallback;
-$headline-font-light: '', $sans-fallback;
+$headline-font: 'Open Sans', $sans-fallback;
+
+$vertical-spacer: 5px;
+$base-font-size: 16px;
+
+
+$h1-size: 48px;
+$h1-line-height: $vertical-spacer * 10;

@@ -1,8 +1,8 @@
-$grid-gutter: 16px;
-$page-edge-padding: 0; //optional additional padding on the edge of the viewport
-$page-edge-padding-breakpoint-small: 5px;
-$container-max-width-large: 1000px;
-$container-max-width-medium: 780px;
+$grid-gutter: 20px;
+$page-edge-padding: 20px; //optional additional padding on the edge of the viewport
+$page-edge-padding-breakpoint-small: 10px;
+$container-max-width-large: 1080px;
+$container-max-width-medium: 769px;
 
 @mixin grid-container() {
   display: block;
@@ -13,15 +13,19 @@ $container-max-width-medium: 780px;
   box-sizing: border-box;
   padding-left: $page-edge-padding + $grid-gutter/2;
   padding-right: $page-edge-padding + $grid-gutter/2;
-  // transition: all $standard-transition;
+  transition: width $standard-transition, margin $standard-transition;
+  @include breakpoint-medium {
+    padding-left: $page-edge-padding-breakpoint-small + $grid-gutter/2;
+    padding-right: $page-edge-padding-breakpoint-small + $grid-gutter/2;
+  }
   @include breakpoint-small {
     padding-left: $page-edge-padding-breakpoint-small + $grid-gutter/2;
     padding-right: $page-edge-padding-breakpoint-small + $grid-gutter/2;
   }
-  @include breakpoint-medium {
+  @include breakpoint-large {
     max-width: $container-max-width-medium;
   }  
-  @include breakpoint-large {
+  @include breakpoint-xl {
     max-width: $container-max-width-large;
   }
 }
@@ -47,5 +51,5 @@ $container-max-width-medium: 780px;
   padding-left: $grid-gutter/2; 
   padding-right: $grid-gutter/2;
   margin-left: $columns-offset * (100%/$total-number-of-columns);
-  transition: all $standard-transition;
+  transition: width $standard-transition, margin $standard-transition;
 }
