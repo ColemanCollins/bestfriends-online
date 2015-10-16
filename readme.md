@@ -20,6 +20,3 @@ run the dependency management team
 ---
 time to see the site!
 `grunt serve`
-
-access to repos on bitbucket
-acccess to heroku
