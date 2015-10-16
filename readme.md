@@ -15,8 +15,8 @@ install sass `gem install sass`
 run the dependency management team
 
 `npm install`
-
 `bower install`
+
 ---
 time to see the site!
 `grunt serve`
